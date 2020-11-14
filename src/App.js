@@ -1,23 +1,54 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import Navbar from './components/Navbar';
+import Login from './components/Login';
+import Profile from './components/Profile';
+import Search from "./components/SearchDonation"
 import './App.css';
+import UserContext from "./utils/UserContext";
+import { BrowserRouter as Router, Route } from "react-router-dom"
+import PostDonation from "./components/PostDonation"
+const App = () => {
+  const [user, setUser] = React.useState();
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("user");
+    if (loggedInUser && JSON.parse(loggedInUser)) {
+      const myUser = JSON.parse(loggedInUser);
+      console.log(myUser);
+      setUser(myUser);
+    }
 
-function App() {
+  }, []);
+
+
+  const Logout = () => {
+    localStorage.clear();
+    setUser(null);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UserContext.Provider value={user}>
+        {
+          !user ?
+            <Login setUser={setUser} />
+            :
+            (
+              <div>
+
+                <Router>
+                  <Navbar Logout={Logout} />
+                  <Route path="/" exact component={Profile} />
+                  <Route path="/profile" component={Profile} />
+                  <Route path="/search" component={Search} />
+                  <Route path="/donate" component={PostDonation} />
+                </Router>
+              </div>
+            )
+        }
+      </UserContext.Provider>
+
+
+
+
     </div>
   );
 }
