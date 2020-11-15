@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Profile from './components/Profile';
-import Search from "./components/SearchDonation"
+import Search from "./components/SearchDonation";
+import MyDonations from "./components/MyDonations"
 import './App.css';
 import UserContext from "./utils/UserContext";
 import { BrowserRouter as Router, Route } from "react-router-dom"
@@ -39,6 +40,7 @@ const App = () => {
                   <Route path="/" exact component={Profile} />
                   <Route path="/profile" component={Profile} />
                   <Route path="/search" component={Search} />
+                  <Route path="/history" component={MyDonations} />
                   <Route path="/donate" component={PostDonation} />
                 </Router>
               </div>
