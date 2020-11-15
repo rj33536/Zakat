@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-
+import DonationCard from "./DonationCard";
 import firebase from '../utils/firebase';
 import UserContext from "../utils/UserContext"
 export default function Search(props) {
     const [user, setUser] = useState({});
-    const [donations,setDonations] = useState([]);
+    const [donations, setDonations] = useState([]);
     React.useEffect(() => {
         let donations = [];
         firebase.database().ref('donations').once("value").then(function (snapshot) {
@@ -37,23 +37,9 @@ export default function Search(props) {
                                 <th>State</th>
 
                                 {donations
-                                    
-                                    .map((donation, idx) => {
-                                        return (
 
-                                            <tr className="user-card" key={user.phone}>
-                                                <td><h5>{user.fullname}</h5></td>
-                                                <td><h5>{user.phone}</h5></td>
-                                                <td className="">
-                                                    {user.role ? user.role
-                                                        .map((bubble) => {
-                                                            return <div className="bubble">{bubble}</div>
-                                                        })
-                                                        : (<></>)}
-                                                </td>
-                                                <td><h5>{user.state}</h5></td>
-                                            </tr>
-                                        )
+                                    .map((donation, idx) => {
+                                        return <DonationCard donation={donation}/>
                                     })}
                             </table>
                         </div>

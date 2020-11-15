@@ -31,7 +31,6 @@ export default function MenuNavbar(props) {
                                                 <Link to="/profile"><button className="btn btn-info m-2 ">Profile</button></Link>
                                                 <Link to="/search"><button className="btn btn-info m-2 ">Search</button></Link>
                                                 <Link to="/donate"><button className="btn btn-info m-2 ">Donate</button></Link>
-                                                <Link to="/refer"><button className="btn btn-info m-2 ">Refer</button></Link>
                                                 <Link to="/mydonations "><button className="btn btn-info m-2 ">My Donations</button></Link>
                                             </div>
 
