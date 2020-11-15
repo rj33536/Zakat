@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap');
+h1{
+    font-size: 90px;
+    font-family: 'Stalinist One', cursive;
+}
+.back{
+    border: 2px solid balck;
+    margin: 0 auto;
+    max-width: 50%;
+
+}
+button{
+    margin: 0 auto;
+    max-width: 40%;
+
+}
+.inplogin{
+    margin: 0 auto;
+    max-width: 40%;
+
+}
+.card{
+    max-width: 50% !important;
+    margin: 0 auto !important;
+
+}
+#searchbar{
+    width: 80% !important;
+
+}

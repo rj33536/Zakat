@@ -53,14 +53,16 @@ function Login(props) {
 
   return (
     <div className={classes.back}>
-      <h1 className={classes.heading}>ShramJivi</h1>
+      <h1 class="text-center py-5">Zakat</h1>
+      
       <div className={classes.loginpage}>
         <div class="form-group" >
-          <label >LOGIN</label>
-          <input type="tel" id="phone" name="phone" pattern="[7-9]{1}[0-9]{9}" required class="form-control" aria-describedby="emailHelp" placeholder="Enter Your Phone Number"
+          
+    
+          <input type="tel" id="phone" class="inplogin" name="phone" pattern="[7-9]{1}[0-9]{9}" required class="form-control my-3" aria-describedby="emailHelp" placeholder="Enter Your Phone Number"
           />
           <div id="recaptcha"></div>
-          <button className="btn btn-secondary" onClick={handleClick}>Verify Phone Number</button>
+          <button className="btn btn-dark btn-block my-3" onClick={handleClick}>Verify Phone Number</button>
         </div>
       </div>
     </div>

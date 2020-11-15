@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import firebase from "../utils/firebase"
 import classes from './profile.module.css';
 import UserContext from "../utils/UserContext"
+import { indigo } from '@material-ui/core/colors';
 // import { ToastContainer, toast } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 var stateData = require('../utils/state.json')
@@ -32,6 +33,7 @@ export default function WorkerForm(props) {
                     return (
                         <div className={classes.back}>
                             {/* <ToastContainer /> */}
+                            <img  class= " img-responsive text-center prfimg"src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTFnG0huY6whcqQtmgJDP7XgSb8VCpmLUnKXw&usqp=CAU"></img>
                             <form onSubmit={handleSubmit(onSubmitForm)}>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Full Name</label>
@@ -93,7 +95,7 @@ export default function WorkerForm(props) {
 
                                 <div class="form-group row">
                                     <div class="col-sm-10">
-                                        <button type="submit" class="btn btn-primary">Update Profile</button>
+                                        <button type="submit" class="btn btn-primary ">Update Profile</button>
                                     </div>
                                 </div>
                             </form>

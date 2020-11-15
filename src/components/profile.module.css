@@ -1,0 +1,24 @@
+.back{
+    border: 1px solid black;
+    border-radius: 50px;
+    max-width: 80%;
+    margin: 2em auto;
+    padding: 1em;
+}
+
+.prfimg{
+    border-radius: 50% ;
+    height: 150px;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+    -webkit-box-shadow: 9px 11px 8px 0px rgba(50, 50, 50, 0.63);
+    -moz-box-shadow:    9px 11px 8px 0px rgba(50, 50, 50, 0.63);
+    box-shadow:         9px 11px 8px 0px rgba(50, 50, 50, 0.63);
+   
+}
+
+form{
+    padding:2em;
+}
+

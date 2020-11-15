@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import UserContext from "../utils/UserContext";
+import classes from './login.module.css';
 export default function MenuNavbar(props) {
 
     return (
@@ -9,8 +10,8 @@ export default function MenuNavbar(props) {
                 (user) => {
                     return (
                         <div>
-                            <nav className="navbar navbar-expand-lg">
-                                <Link to="/"><span className="navbar-brand" >Zakat</span></Link>
+                            <nav className="navbar navbar-expand-lg  bg-dark">
+                                <Link to="/"><span className="navbar-brand text-warning" >Zakat</span></Link>
 
                                 <div className="navbar-toggler" type="div" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span className="navbar-toggler-icon"></span>

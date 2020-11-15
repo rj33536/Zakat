@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import './login.module.css';
 import firebase from '../utils/firebase';
 import IconButton from '@material-ui/core/IconButton';
 import LocationOnTwoToneIcon from '@material-ui/icons/LocationOnTwoTone';
@@ -66,9 +66,9 @@ export default function Search(props) {
                     return (
                         <div class="background container">
 
-                            <div className="search">
+                            <div>
 
-                                <input id="searchbar" placeholder="Search by Profession or Name OR STATE" type="text" onChange={changeSearch} />
+                                <input id="searchbar" class="search" placeholder="Search the item You need" width="600" type="text" onChange={changeSearch} />
                                 <IconButton onClick={getLocation} aria-label="location">
                                     <LocationOnTwoToneIcon />
                                 </IconButton>
@@ -80,7 +80,7 @@ export default function Search(props) {
                             {donations
 
                                 .map((donation, idx) => {
-                                    return <DonationCard donation={donation} user={user} />
+                                    return <DonationCard  donation={donation} user={user} />
                                 })}
 
                         </div>

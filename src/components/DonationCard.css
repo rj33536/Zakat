@@ -1,0 +1,22 @@
+
+.card{
+
+    max-width: 80%;
+    margin: 3em auto;
+   
+    
+
+}
+
+.grid
+{
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.donimg img{
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    display:block;
+}
