@@ -12,10 +12,11 @@ export default function PostJob() {
     function onSubmitForm(data) {
         console.log(data);
         data["phone"] = user.phone;
+        data["status"] = "listed";
+        data["pins"] = [];
         firebase.database().ref("/donations/").push(data).then((data) => {
             console.log(data.toString());
         }).catch(() => { }).finally(() => {
-            console.log("posted donation")
             toast("posted donation");
         });
 

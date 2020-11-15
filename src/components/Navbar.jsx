@@ -9,12 +9,12 @@ export default function MenuNavbar(props) {
                 (user) => {
                     return (
                         <div>
-                            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                            <nav className="navbar navbar-expand-lg">
                                 <Link to="/"><span className="navbar-brand" >Zakat</span></Link>
 
-                                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <div className="navbar-toggler" type="div" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                     <span className="navbar-toggler-icon"></span>
-                                </button>
+                                </div>
 
                                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                     <ul className="navbar-nav mr-auto">
@@ -26,17 +26,17 @@ export default function MenuNavbar(props) {
                                         user ?
 
                                             (<div>
-                                                <button className="btn btn-info m-2  " onClick={props.Logout}>logout</button>
+                                                <div className="btn btn-info m-2  " onClick={props.Logout}>logout</div>
 
-                                                <Link to="/profile"><button className="btn btn-info m-2 ">Profile</button></Link>
-                                                <Link to="/search"><button className="btn btn-info m-2 ">Search</button></Link>
-                                                <Link to="/donate"><button className="btn btn-info m-2 ">Donate</button></Link>
-                                                <Link to="/mydonations "><button className="btn btn-info m-2 ">My Donations</button></Link>
+                                                <Link to="/profile"><div className="btn btn-info m-2 ">Profile</div></Link>
+                                                <Link to="/search"><div className="btn btn-info m-2 ">Search</div></Link>
+                                                <Link to="/donate"><div className="btn btn-info m-2 ">Donate</div></Link>
+                                                <Link to="/mydonations "><div className="btn btn-info m-2 ">My Donations</div></Link>
                                             </div>
 
                                             ) :
                                             <div>
-                                                <Link to="/login"><button className="btn btn-info m-2 " onClick={() => props.setSection("login")}>Login</button></Link>
+                                                <Link to="/login"><div className="btn btn-info m-2 " onClick={() => props.setSection("login")}>Login</div></Link>
                                             </div>
 
                                     }

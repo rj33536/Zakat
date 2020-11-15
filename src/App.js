@@ -40,7 +40,7 @@ const App = () => {
                   <Route path="/" exact component={Profile} />
                   <Route path="/profile" component={Profile} />
                   <Route path="/search" component={Search} />
-                  <Route path="/history" component={MyDonations} />
+                  <Route path="/mydonations" component={MyDonations} />
                   <Route path="/donate" component={PostDonation} />
                 </Router>
               </div>

@@ -1,27 +1,26 @@
 import React from 'react';
 
 export default function DonationCard(props) {
+    console.log(props.donation);
     return (
-        <tr className="user-card" key={props.donation.phone}>
-            <td><h5>{props.donation.fullname}</h5></td>
-            <td><h5>{props.donation.phone}</h5></td>
-            <td className="">
-                {props.donation.role ? props.donation.role
-                    .map((bubble) => {
-                        return <div className="bubble">{bubble}</div>
-                    })
-                    : (<></>)}
-            </td>
-            <td><h5>{props.donation.state}</h5></td>
-            <td><button>
-                {/***
-                 here comes the refer and verify button. after the donation has been recieved, it will say delivered
-                 status:- listed, delivered
-                 buttons:-verify(if this is my own donation), otherwise refer
-                 on clicking refer I'll get a pin which will be used later to verify while collectings
-                 */}
-                
-                </button></td>
-        </tr>
+        <div className="card p-2">
+            <h3 className="card-title">{props.donation.title}</h3>
+            <div className="card-body">
+                <p className="card-text">{props.donation.description}</p>
+                <p className="card-text">{props.donation.role}</p>
+                <p className="card-text">{[props.donation.address]}</p>
+            </div>
+            {
+                props.donation.phone == props.user.phone ?
+                    (
+                        <button className="btn btn-secondary">
+                            Verify
+                        </button>
+                    ) : (<button className="btn btn-secondary">
+                        Refer
+                    </button>)
+            }
+        </div>
+
     )
 }

@@ -4,7 +4,7 @@ import firebase from '../utils/firebase';
 import IconButton from '@material-ui/core/IconButton';
 import LocationOnTwoToneIcon from '@material-ui/icons/LocationOnTwoTone';
 import DonationCard from "./DonationCard";
-
+import UserContext from "../utils/UserContext";
 export default function Search(props) {
     const [name, setName] = useState("");
     const [roles, setRoles] = useState([]);
@@ -36,9 +36,13 @@ export default function Search(props) {
         let usersdemo = [];
         firebase.database().ref('donations').once("value").then(function (snapshot) {
             snapshot.forEach((data) => {
+                console.log(data.val());
                 usersdemo.push(data.val());
             })
-        }).then(() => { setDonations(usersdemo) });
+        }).then(() => {
+            console.log(usersdemo);
+            setDonations(usersdemo)
+        });
 
 
     }, []);
@@ -54,47 +58,36 @@ export default function Search(props) {
         console.log(position);
         alert(position.coords.latitude + " " + position.coords.longitude);
     }
-
+    console.log(donations)
     return (
-        <div class="background">
+        <UserContext.Consumer>
+            {
+                (user) => {
+                    return (
+                        <div class="background container">
 
-            <div className="search">
+                            <div className="search">
 
-                <input id="searchbar" placeholder="Search by Profession or Name OR STATE" type="text" onChange={changeSearch} />
-                <IconButton onClick={getLocation} aria-label="location">
-                    <LocationOnTwoToneIcon />
-                </IconButton>
-            </div>
-
-           
-
-            <table id="allUsers" class="customers">
-                <th>Name</th>
-                <th>Phone No.</th>
-                <th>Profession</th>
-                <th>State</th>
-
-                {donations
-                    .filter((donation) => {
-                        if (donation.fullname)
-                            return donation.fullname.toLowerCase().includes(name)
-                                // || 
-                                //  user.state.toLowerCase().includes(name)
-
-                                ||
-                                donation.role.filter((role) => {
-                                    return role.toLowerCase().includes(name)
-                                }).length != 0;
+                                <input id="searchbar" placeholder="Search by Profession or Name OR STATE" type="text" onChange={changeSearch} />
+                                <IconButton onClick={getLocation} aria-label="location">
+                                    <LocationOnTwoToneIcon />
+                                </IconButton>
+                            </div>
 
 
 
-                        return false;
-                    })
-                    .map((donation, idx) => {
-                        return <DonationCard donation={donation} />
-                    })}
-            </table>
-        </div>
+
+                            {donations
+
+                                .map((donation, idx) => {
+                                    return <DonationCard donation={donation} user={user} />
+                                })}
+
+                        </div>
+                    )
+                }
+            }
+        </UserContext.Consumer>
     )
 
 
