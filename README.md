@@ -27,6 +27,11 @@ Or, if the needy have a keypad mobile(a low-end mobile), then they can search fo
  
 # Screen shots and Use case diagram
 [![zakat.png](https://i.postimg.cc/pLWgmjCK/zakat.png)](https://postimg.cc/GHfMNHZp)
+[![zakat3.png](https://i.postimg.cc/vmDkzdpB/zakat3.png)](https://postimg.cc/67JMWF6J)
+[![unknown.png](https://i.postimg.cc/y8prWbkz/unknown.png)](https://postimg.cc/sMSJNKYn)
+[![unknown2.png](https://i.postimg.cc/yNwQy3mQ/unknown2.png)](https://postimg.cc/2q77z6Xh)
+[![unknown3.png](https://i.postimg.cc/3RmLSr9K/unknown3.png)](https://postimg.cc/BLZct0dy)
+[![unknown4.png](https://i.postimg.cc/fys864gY/unknown4.png)](https://postimg.cc/YGXNWP7S)
  
  
 
