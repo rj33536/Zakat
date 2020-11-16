@@ -4,17 +4,16 @@
     max-width: 80%;
     margin: 2em auto;
     padding: 1em;
+    background-color: #F7F8ED;
 }
 
-.prfimg{
-    border-radius: 50% ;
-    height: 150px;
-    width: 150px;
-    display: block;
-    margin: 0 auto;
-    -webkit-box-shadow: 9px 11px 8px 0px rgba(50, 50, 50, 0.63);
-    -moz-box-shadow:    9px 11px 8px 0px rgba(50, 50, 50, 0.63);
-    box-shadow:         9px 11px 8px 0px rgba(50, 50, 50, 0.63);
+.back img{
+    border-radius: 50% !important ;
+    height: 150px !important;
+    width: 150px !important;
+    display: block !important;
+    margin: 0 auto !important;
+
    
 }
 

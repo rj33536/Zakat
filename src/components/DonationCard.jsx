@@ -12,17 +12,17 @@ export default function DonationCard(props) {
 
 
             <div className="card-body">
-                <p className="card-text">{props.donation.description}</p>
-                <p className="card-text">{props.donation.role}</p>
-                <p className="card-text">{[props.donation.address]}</p>
+                <p className="card-text"><span><h4>Description</h4></span>{props.donation.description}</p>
+                <p className="card-text"> <span><h6>Tags</h6></span>{props.donation.role}</p>
+                <p className="card-text"> <span><h6>Address</h6></span>{[props.donation.address]}</p>
                   
             {
                 props.donation.phone == props.user.phone ?
                     (
-                        <button className="btn btn-secondary">
+                        <button className="btn btn-success">
                             Verify
                         </button>
-                    ) : (<button className="btn btn-secondary">
+                    ) : (<button className="btn btn-success">
                         Refer
                     </button>)
             }

@@ -33,7 +33,7 @@ export default function WorkerForm(props) {
                     return (
                         <div className={classes.back}>
                             {/* <ToastContainer /> */}
-                            <img  class= " img-responsive text-center prfimg"src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTFnG0huY6whcqQtmgJDP7XgSb8VCpmLUnKXw&usqp=CAU"></img>
+                            <img  class= "prfimg" alt =''src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTFnG0huY6whcqQtmgJDP7XgSb8VCpmLUnKXw&usqp=CAU"></img>
                             <form onSubmit={handleSubmit(onSubmitForm)}>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Full Name</label>
